@@ -471,45 +471,59 @@ class StationController extends Controller
 
     public function raspget(RaspRequest $request)
     {
-      $client = new Client([
-      'base_uri' => 'http://localhost:8080',
-      ]);
-      $attributes = $request->only(['departure_station', 'arrival_station', 'date']);
-      $response = $client->request('GET', 'https://api.rasp.yandex.net/v3.0/search/', [
-        'query' => [
-          'apikey'          => '',
-          'from'            => $attributes['departure_station'],
-          'to'              => $attributes['arrival_station'],
-          'date'            => $attributes['date'],
-          'lang'            => 'ru_RU',
-          'transport_types' => 'suburban',
-        ]
-      ]);
-      $times = json_decode($response->getBody(), 1);
-      $total = $times['pagination']['total'];
-      $date = substr($times['segments'][0]['arrival'], 0, 10);
-      return view('rasps.raspgot', compact('times', 'total', 'date'));
+      try
+      {
+        $client = new Client([
+        'base_uri' => 'http://localhost:8080',
+        ]);
+        $attributes = $request->only(['departure_station', 'arrival_station', 'date']);
+        $response = $client->request('GET', 'https://api.rasp.yandex.net/v3.0/search/', [
+          'query' => [
+            'apikey'          => 'af880362-8d18-4e43-b37d-53a718cc6b3e',
+            'from'            => $attributes['departure_station'],
+            'to'              => $attributes['arrival_station'],
+            'date'            => $attributes['date'],
+            'lang'            => 'ru_RU',
+            'transport_types' => 'suburban',
+          ]
+        ]);
+        $times = json_decode($response->getBody(), 1);
+        $total = $times['pagination']['total'];
+        $date = substr($times['segments'][0]['arrival'], 0, 10);
+        return view('rasps.raspgot', compact('times', 'total', 'date'));
+      }
+      catch (\Exception $exception)
+      {
+        return view('tickets.noway');
+      }
     }
 
     public function raspgetuser(RaspRequest $request)
     {
-      $client = new Client([
-      'base_uri' => 'http://localhost:8080',
-      ]);
-      $attributes = $request->only(['departure_station', 'arrival_station', 'date']);
-      $response = $client->request('GET', 'https://api.rasp.yandex.net/v3.0/search/', [
-        'query' => [
-          'apikey'          => '',
-          'from'            => $attributes['departure_station'],
-          'to'              => $attributes['arrival_station'],
-          'date'            => $attributes['date'],
-          'lang'            => 'ru_RU',
-          'transport_types' => 'suburban',
-        ]
-      ]);
-      $times = json_decode($response->getBody(), 1);
-      $total = $times['pagination']['total'];
-      $date = substr($times['segments'][0]['arrival'], 0, 10);
-      return view('rasps.raspgotuser', compact('times', 'total', 'date'));
+      try
+      {
+        $client = new Client([
+        'base_uri' => 'http://localhost:8080',
+        ]);
+        $attributes = $request->only(['departure_station', 'arrival_station', 'date']);
+        $response = $client->request('GET', 'https://api.rasp.yandex.net/v3.0/search/', [
+          'query' => [
+            'apikey'          => 'af880362-8d18-4e43-b37d-53a718cc6b3e',
+            'from'            => $attributes['departure_station'],
+            'to'              => $attributes['arrival_station'],
+            'date'            => $attributes['date'],
+            'lang'            => 'ru_RU',
+            'transport_types' => 'suburban',
+          ]
+        ]);
+        $times = json_decode($response->getBody(), 1);
+        $total = $times['pagination']['total'];
+        $date = substr($times['segments'][0]['arrival'], 0, 10);
+        return view('rasps.raspgotuser', compact('times', 'total', 'date'));
+      }
+      catch (\Exception $exception)
+      {
+        return view('tickets.noway');
+      }
     }
 }

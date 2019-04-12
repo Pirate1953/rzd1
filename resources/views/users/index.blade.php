@@ -98,7 +98,7 @@
               </div>
           @endif
 
-          <h2>{{__('Таблица неактивированных пользователей')}}</h2>
+          <h2>{{__('Таблица не активированных пользователей')}}</h2>
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>

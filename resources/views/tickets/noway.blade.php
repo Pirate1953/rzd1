@@ -56,7 +56,7 @@
     <div class="container">
       <div class="py-5 text-center">
         <p></p>
-        <h2 style="color: red;">{{__('Бидетов в выбранном направлении нет!')}}</h2>
+        <h2 style="color: red;">{{__('Билетов в выбранном направлении нет!')}}</h2>
         <p class="lead" style="color: black !important;">{{__('Эта ошибка возникает если вы выбираете неправильное или не существующее направление.')}}</p>
       </div>
 </div>

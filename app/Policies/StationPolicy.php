@@ -159,4 +159,16 @@ class StationPolicy
         return false;
       }
     }
+
+    public function rasps(User $user)
+    {
+      if ($user->role_id === 6778)
+      {
+        return true;
+      }
+      else
+      {
+        return false;
+      }
+    }
 }

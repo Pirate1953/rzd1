@@ -74,15 +74,19 @@
           </ul>
         </nav>
 
-        <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
+        <main class="col-sm-10 offset-sm-3 col-md-10 offset-md-2 pt-3">
           <h1>{{__('Inactive accounts')}}</h1>
           <section class="row text-center placeholders">
-            <div class="col-6 col-sm-3 placeholder">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 placeholder">
               <a class="btn btn-danger" style="background-color: red;" href="{{route('users.usersindex')}}">{{__('Inactive accounts')}}</a>
             </div>
-            <div class="col-6 col-sm-3 placeholder">
+            <div class="col-md-4"></div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4 mt-2 placeholder">
               <a class="btn btn-primary" href="{{route('users.indexact')}}">{{__('Active accounts')}}</a>
             </div>
+            <div class="col-md-4"></div>
           </section>
           @if (Session::has('message'))
               {{-- Всплывающие сообщения. --}}

@@ -94,7 +94,9 @@
               <strong>{{ $errors->first('email') }}</strong>
           </span>
       @endif
+      <div class="mb-2 mt-2">
       <a href="{{route('users.editpass')}}" >{{__('Change password')}}</a>
+      </div>
       {{
           Form::submit(
               __('Save'),

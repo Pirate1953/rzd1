@@ -268,6 +268,12 @@ class TicketController extends Controller
       $stat = $ticket->pay_status;
       $str = "id=$id&dep=$dep&arr=$arr&type=$t&pr=$price&user=$user&start=$start&end=$end&st=$stat";
       $qr = QrCode::format('png')->size(2000)->generate($str);
+      if ($request->header('Accept') === 'image/png') {
+          return response($qr)
+              ->header('Content-Type', 'image/png')
+              ->header('Content-Disposition', 'attachment; filename="ticket.png"')
+              ;
+      }
       $qr = base64_encode($qr);
       return view('tickets.show', [
         'ticket' => $ticket,

@@ -3,9 +3,8 @@ body {
   padding-top: 3.5rem;
 }
 .jumbotron{
-  background-image: url("/media/aboutproject_pic.jpg");
+  background-image: url("/media/phones.jpg");
   background-size: cover;
-  background-attachment: fixed;
   background-position: center center;
   color: #fff;
 }

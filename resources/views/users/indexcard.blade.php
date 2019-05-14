@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" href="/rzd1/storage/app/icon.ico">
+    <link rel="icon" href="/media/icon.ico">
 
     <title>{{__('Cards')}}</title>
 
@@ -80,7 +80,7 @@
         <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
           <h1>{{__('Cards')}}</h1>
           <div class="customcenter" style="text-align: center!important;">
-          <img class="mb-4 rounded" src="/rzd1/storage/app/rub.png" alt="" width="150" height="150">
+          <img class="mb-4 rounded" src="/media/rub.png" alt="" width="150" height="150">
         </div>
           <p class="lead text-center" style="margin: 0 auto !important;">{{__('Здесь вы можете видеть все рарточки, которые привязаны к вашему аккаунту. Если вы хотите привязать карточку к аакаунут вы можете пеейти на ')}} {{Html::secureLink(route('cards.createcard'),__('форму привязки.'))}}</p>
           @if (Session::has('message'))

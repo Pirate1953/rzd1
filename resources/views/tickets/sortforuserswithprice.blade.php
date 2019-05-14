@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" href="/rzd1/storage/app/icon.ico">
+    <link rel="icon" href="/media/icon.ico">
 
     <title>{{__('History')}}</title>
 
@@ -95,7 +95,7 @@
         <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
           <h1>{{__('History')}}</h1>
           <div class="customcenter" style="text-align: center!important;">
-          <img class="mb-4 rounded" style="" src="/rzd1/storage/app/logo.png" alt="" width="90" height="90">
+          <img class="mb-4 rounded" style="" src="/media/logo.png" alt="" width="90" height="90">
         </div>
           <p class="lead text-center" style="margin: 0 auto !important;">{{__('Здесь вы можете увидеть историю ваших купленных билетов. Тут отображаются билеты, за которые была произведена оплата. Для того чтобы купить билет на электропоезд, вы можете перейти')}} {{Html::secureLink(route('tickets.prepare'),__('сюда.'))}}</p>
           @if (Session::has('message'))

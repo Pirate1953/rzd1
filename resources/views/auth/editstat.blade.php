@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="/rzd1/storage/app/icon.ico">
+    <link rel="icon" href="/media/icon.ico">
 
     <title>{{__('Passport data')}}</title>
 
@@ -56,7 +56,7 @@
     <div class="container">
       <div class="py-5 text-center">
         <p></p>
-        <img class="d-block mx-auto mb-4" src="/rzd1/storage/app/gerb.png" alt="" width="400" height="130">
+        <img class="d-block mx-auto mb-4" src="/media/gerb.png" alt="" width="400" height="130">
         <h2>{{__('Passport data')}}</h2>
         <p class="lead">Введите свои паспортные данные для отправки на сервер. После того, как админитстратор поверит их и подтвердит, вы смыжоте привязывать карточки к аккаунту и использовать их при оплате.</p>
       </div>
@@ -121,6 +121,10 @@
               <div class="col-md-6 mb-3">
                 <label for="datebirth">{{ __('Gender:') }}</label>
                 {{ Form::select('gender_id', $gender, null, ['class' => 'form-control'])}}
+              </div>
+              <div class="col-md-6 mb-3">
+                <label>{{ __('Обработка персональных данных') }}</label>
+                <label><input type="checkbox" name="agree">{{__(' Я согласен')}}</label>
               </div>
             </div>
             {{

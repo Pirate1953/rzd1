@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" href="/rzd1/storage/app/icon.ico">
+    <link rel="icon" href="/media/icon.ico">
 
     <title>{{__('Register')}}</title>
 
@@ -23,7 +23,7 @@
       <input id="gender_id" type="hidden" class="form-control{{ $errors->has('gender_id') ? ' is-invalid' : '' }}" name="gender_id" value="{{ '3' }}" required autofocus>
       <input id="role_id" type="hidden" class="form-control{{ $errors->has('role_id') ? ' is-invalid' : '' }}" name="role_id" value="{{ '6778' }}" required autofocus>
       <input id="userstat_id" type="hidden" class="form-control{{ $errors->has('userstat_id') ? ' is-invalid' : '' }}" name="userstat_id" value="{{ '1' }}" required autofocus>
-      <a href="{{route('stations.aboutproject')}}"><img class="mb-4 rounded" src="/rzd1/storage/app/logo.png" alt="" width="72" height="72"></a>
+      <a href="{{route('stations.aboutproject')}}"><img class="mb-4 rounded" src="/media/logo.png" alt="" width="72" height="72"></a>
       <h1 class="h3 mb-3 font-weight-normal">{{__('Register')}}</h1>
       <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" placeholder="Имя" required autofocus>
 

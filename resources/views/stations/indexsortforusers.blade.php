@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" href="/rzd1/storage/app/icon.ico">
+    <link rel="icon" href="/media/icon.ico">
 
     <title>{{__('Stations')}}</title>
 
@@ -95,7 +95,7 @@
         <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
           <h1>{{__('Stations')}}</h1>
           <div class="customcenter" style="text-align: center!important;">
-          <img class="mb-4 rounded" style="" src="/rzd1/storage/app/logo.png" alt="" width="90" height="90">
+          <img class="mb-4 rounded" style="" src="/media/logo.png" alt="" width="90" height="90">
         </div>
           <p class="lead text-center" style="margin: 0 auto !important;">{{__('Здесь вы можете получить подробную информацию о станции, а также изучить расписание. Мы используем сервисы Яндекс для того, чтобы наши клиенты могли получить расписание, не покидая наш сайт.')}}</p>
           @if (Session::has('message'))

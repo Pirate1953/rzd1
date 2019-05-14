@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" href="/rzd1/storage/app/icon.ico">
+    <link rel="icon" href="/media/icon.ico">
 
     <title>{{__('Buy ticket')}}</title>
 
@@ -62,7 +62,7 @@
     <div class="container">
       <div class="py-5 text-center">
         <p></p>
-        <img class="d-block mx-auto mb-4 img-fluid rounded-circle" src="/rzd1/storage/app/tickets.png" alt="" width="160" height="160">
+        <img class="d-block mx-auto mb-4 img-fluid rounded-circle" src="/media/tickets.png" alt="" width="160" height="160">
         <h2>{{__('Buy ticket')}}</h2>
         <p class="lead" style="color: black !important;">{{__('Эта форма предназначена для покупки проездного документа, пожалуйтса укажите станции прибытия и отправления, а также способ оплаты.')}}</p>
       </div>
@@ -77,9 +77,9 @@
       {{ __('Choose pay way') }}
       {{ Form::select('number', $cards, null, ['class' => 'custom-select d-block w-100'])}}
       <hr>
-      <img src="/rzd1/storage/app/webmoney.png" width="160" height="50" alt="">
-      <img src="/rzd1/storage/app/qiwi.png" width="110" height="50" alt="">
-      <img src="/rzd1/storage/app/paypal.png" width="170" height="50" alt="">
+      <img src="/media/webmoney.png" width="160" height="50" alt="">
+      <img src="/media/qiwi.png" width="110" height="50" alt="">
+      <img src="/media/paypal.png" width="170" height="50" alt="">
 
       </div>
 

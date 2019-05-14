@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" href="/rzd1/storage/app/icon.ico">
+    <link rel="icon" href="/media/icon.ico">
 
     <title>{{__('Users')}}</title>
 
@@ -77,16 +77,16 @@
         <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
           <h1>{{__('Active accounts')}}</h1>
           <section class="row text-center placeholders">
-            <div class="col-md-4"></div>
-            <div class="col-md-4 placeholder">
-              <a class="btn btn-danger" style="background-color: red;" href="{{route('users.usersindex')}}">{{__('Inactive accounts')}}</a>
+            <div class="col-sm-6 placeholder">
+              <a href="{{route('users.indexact')}}"><img src="/media/dashboard_ico/User_ico.png" width="200" height="200" class="img-fluid rounded-circle" alt="Users"></a>
+              <h4>{{__('Active accounts')}}</h4>
+              <span class="text-muted">{{__('Работа с аккаунтами')}}</span>
             </div>
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
-            <div class="col-md-4 mt-2 placeholder">
-              <a class="btn btn-primary" href="{{route('users.indexact')}}">{{__('Active accounts')}}</a>
+            <div class="col-sm-6 placeholder">
+              <a href="{{route('users.usersindex')}}"><img src="/media/dashboard_ico/User_ico_inact.png" width="200" height="200" class="img-fluid rounded-circle" alt="Users"></a>
+              <h4>{{__('Inactive accounts')}}</h4>
+              <span class="text-muted">{{__('Работа с аккаунтами')}}</span>
             </div>
-            <div class="col-md-4"></div>
           </section>
           @if (Session::has('message'))
               {{-- Всплывающие сообщения. --}}

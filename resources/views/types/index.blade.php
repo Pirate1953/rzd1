@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" href="/rzd1/storage/app/icon.ico">
+    <link rel="icon" href="/media/icon.ico">
 
     <title>{{__('Types of tickets')}}</title>
 
@@ -78,22 +78,22 @@
           <h1>{{__('Types of tickets')}}</h1>
           <section class="row text-center placeholders">
             <div class="col-6 col-sm-3 placeholder">
-              <a href="{{route('stations.index')}}"><img src="/rzd1/storage/app/dashboard_ico/St_ico.png" width="200" height="200" class="img-fluid rounded-circle" alt="Stations"></a>
+              <a href="{{route('stations.index')}}"><img src="/media/dashboard_ico/St_ico.png" width="200" height="200" class="img-fluid rounded-circle" alt="Stations"></a>
               <h4>{{__('Stations')}}</h4>
               <div class="text-muted">{{__('Работа со станциями')}}</div>
             </div>
             <div class="col-6 col-sm-3 placeholder">
-              <a href="{{route('zones.index')}}"><img src="/rzd1/storage/app/dashboard_ico/Zone_ico.png" width="200" height="200" class="img-fluid rounded-circle" alt="Zones"></a>
+              <a href="{{route('zones.index')}}"><img src="/media/dashboard_ico/Zone_ico.png" width="200" height="200" class="img-fluid rounded-circle" alt="Zones"></a>
               <h4>{{__('Zones')}}</h4>
               <span class="text-muted">{{__('Работа с зонами')}}</span>
             </div>
             <div class="col-6 col-sm-3 placeholder">
-              <a href="{{route('types.index')}}"><img src="/rzd1/storage/app/dashboard_ico/Type_ico.png" width="200" height="200" class="img-fluid rounded-circle" alt="Types"></a>
+              <a href="{{route('types.index')}}"><img src="/media/dashboard_ico/Type_ico.png" width="200" height="200" class="img-fluid rounded-circle" alt="Types"></a>
               <h4>{{__('Types of tickets')}}</h4>
               <span class="text-muted">{{__('Работа с типами билетов')}}</span>
             </div>
             <div class="col-6 col-sm-3 placeholder">
-              <a href="{{route('users.usersindex')}}"><img src="/rzd1/storage/app/dashboard_ico/User_ico.png" width="200" height="200" class="img-fluid rounded-circle" alt="Users"></a>
+              <a href="{{route('users.usersindex')}}"><img src="/media/dashboard_ico/User_ico.png" width="200" height="200" class="img-fluid rounded-circle" alt="Users"></a>
               <h4>{{__('Users')}}</h4>
               <span class="text-muted">{{__('Работа с аккаунтами')}}</span>
             </div>

@@ -175,7 +175,7 @@ class StationController extends Controller
     public function destroy(Station $station, Request $request)
     {
       foreach ($station->images as $image ) {
-        unlink(storage_path("app/$image->filename"));
+        unlink("media/$image->filename");
       }
       $station->delete();
       $request->session()->flash(
@@ -206,7 +206,7 @@ class StationController extends Controller
       //var_dump($request->only(['zone_id']));
       $zones = Zone::orderBy('number', 'ASC')->pluck('name', 'id');
       $attributes = $request->only(['zone_id']);
-      $stations = Station::where('zone_id', '=', $attributes['zone_id'])->get();
+      $stations = Station::where('zone_id', '=', $attributes['zone_id'])->orderBy('number', 'ASC')->get();
       return view('stations.indexsortforanonym', compact('stations', 'zones'));
     }
 
@@ -217,9 +217,28 @@ class StationController extends Controller
       return view('stations.indexforanonym', compact('zones', 'stations'));
     }
 
+    public function stationmobile(Request $request, Station $station)
+    {
+      $st_id = $request->only(['id']);
+      $station = Station::where('id', '=', $st_id)->get();
+      return $station->toJson(JSON_UNESCAPED_UNICODE);
+    }
+
+    public function stationimagemobile(Request $request, Station $station)
+    {
+      $st_id = $request->only(['id']);
+      $images = Image::where('station_id', '=', $st_id)->get();
+      return $images->toJson(JSON_UNESCAPED_UNICODE);
+    }
+
     public function aboutproject()
     {
       return view('stations.aboutproject');
+    }
+
+    public function mobileinfo()
+    {
+      return view('stations.mobileinfo');
     }
 
     public function stages()
@@ -442,7 +461,7 @@ class StationController extends Controller
 
     public function storeimage(CreateImageRequest $request, Station $station)
     {
-      $filename = $request->file('filename')->store('/stations');
+      $filename = $request->file('filename')->storePublicly('stations', 'public');
       ////////var_dump($filename);
       $attributes = $request->only(['station_id']);
       $attributes['filename'] = $filename;
@@ -480,12 +499,13 @@ class StationController extends Controller
         $attributes = $request->only(['departure_station', 'arrival_station', 'date']);
         $response = $client->request('GET', 'https://api.rasp.yandex.net/v3.0/search/', [
           'query' => [
-            'apikey'          => '',
+            'apikey'          => 'af880362-8d18-4e43-b37d-53a718cc6b3e',
             'from'            => $attributes['departure_station'],
             'to'              => $attributes['arrival_station'],
             'date'            => $attributes['date'],
             'lang'            => 'ru_RU',
             'transport_types' => 'suburban',
+            'limit'           => '200',
           ]
         ]);
         $times = json_decode($response->getBody(), 1);
@@ -510,12 +530,13 @@ class StationController extends Controller
         $attributes = $request->only(['departure_station', 'arrival_station', 'date']);
         $response = $client->request('GET', 'https://api.rasp.yandex.net/v3.0/search/', [
           'query' => [
-            'apikey'          => '',
+            'apikey'          => 'af880362-8d18-4e43-b37d-53a718cc6b3e',
             'from'            => $attributes['departure_station'],
             'to'              => $attributes['arrival_station'],
             'date'            => $attributes['date'],
             'lang'            => 'ru_RU',
             'transport_types' => 'suburban',
+            'limit'           => '200',
           ]
         ]);
         $times = json_decode($response->getBody(), 1);

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="/rzd1/storage/app/icon.ico">
+    <link rel="icon" href="/media/icon.ico">
 
     <title>{{__('Edit Role and User Info')}}</title>
 
@@ -53,7 +53,7 @@
     <div class="container">
       <div class="py-5 text-center">
         <p></p>
-        <img class="d-block mx-auto mb-4 img-fluid rounded-circle" src="/rzd1/storage/app/dashboard_ico/User_ico.png" alt="" width="160" height="160">
+        <img class="d-block mx-auto mb-4 img-fluid rounded-circle" src="/media/dashboard_ico/User_ico.png" alt="" width="160" height="160">
         <h2>{{__('Edit Role and User Info')}}</h2>
         <p class="lead">{{__('Эта форма предназначена для просмтотра информации о пользователе, а также для пожтверждения его учётной записи.')}}</p>
       </div>

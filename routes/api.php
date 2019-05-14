@@ -20,6 +20,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('stations/indexforusers', 'StationController@indexforusers')
      ->name('stations.indexforusers')->middleware('auth:api');
 
+Route::get('stations/stationmobile', 'StationController@stationmobile')
+    ->name('stations.stationmobile')->middleware('auth:api');
+
+Route::get('stations/stationimagemobile', 'StationController@stationimagemobile')
+    ->name('stations.stationimagemobile')->middleware('auth:api');
+
 Route::get('tickets/historyticketusers', 'TicketController@historyticketusers')
       ->name('tickets.historyticketusers')->middleware('auth:api');
 
@@ -32,8 +38,17 @@ Route::post('tickets/store', 'TicketController@store')
 Route::post('tickets/prepareviewmobile', 'TicketController@prepareviewmobile')
       ->name('tickets.prepareviewmobile')->middleware('auth:api');
 
-Route::post('tickets/mobileticket', 'TicketController@mobileticket')
+Route::get('tickets/mobileticket', 'TicketController@mobileticket')
       ->name('tickets.mobileticket')->middleware('auth:api');
+
+Route::get('tickets/mobileticketqrcode', 'TicketController@mobileticketqrcode')
+      ->name('tickets.mobileticketqrcode')->middleware('auth:api');
 
 Route::get('tickets/prepare', 'TicketController@prepare')
       ->name('tickets.prepare')->middleware('auth:api');
+
+Route::get('tickets/indexcardmobile', 'TicketController@indexcardmobile')
+      ->name('tickets.indexcardmobile')->middleware('auth:api');
+
+Route::get('tickets/showfinal', 'TicketController@showfinal')
+      ->name('tickets.showfinal')->middleware('auth:api');

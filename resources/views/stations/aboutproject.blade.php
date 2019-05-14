@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" href="/rzd1/storage/app/icon.ico">
+    <link rel="icon" href="/media/icon.ico">
 
     <title>{{__('About project')}}</title>
 
@@ -80,14 +80,13 @@
         </div>
 
         <hr class="featurette-divider">
-
         <div class="row featurette">
           <div class="col-md-7">
             <h2 class="featurette-heading">{{__('Простота и удобства пользования.')}}</h2>
             <p class="lead">{{__('Использование QR-кодов для хранения данных о билете позволяет быстро считать информацию. Вдобавок к этому, QR-код можно хранить на цифровом носителе и просто поднести его к сканеру, что также упрощает жизнь. QR-код был разработан и представлен японской компанией Denso-Wave в 1994 году. В отличие от старого штрихкода, который сканируют тонким лучом, QR-код определяется датчиком или камерой как двумерное изображение. Три квадрата в углах изображения и меньшие синхронизирующие квадратики по всему коду позволяют нормализовать размер изображения.')}}</p>
           </div>
           <div class="col-md-5">
-            <img class="featurette-image img-fluid mx-auto rounded" src="/rzd1/storage/app/qr-code.jpg" width="300" height="300" alt="QR-code">
+            <img class="featurette-image img-fluid mx-auto rounded" src="/media/qr-code.jpg" width="300" height="300" alt="QR-code">
           </div>
         </div>
         <hr class="featurette-divider">
@@ -98,7 +97,7 @@
             <p class="lead">{{__('Появляются новые кассы и новые билеты и новые поезда. QR-коды всё чаще начинают использовать в различных сферах деятельности. Так, например, для оплаты проезда на аэроэкспессе необходимо приобрести билет, который также имеет Qr-код.')}}</p>
           </div>
           <div class="col-md-5 order-md-1">
-            <img class="featurette-image img-fluid mx-auto rounded" src="/rzd1/storage/app/aero.jpg" alt="Train">
+            <img class="featurette-image img-fluid mx-auto rounded" src="/media/aero.jpg" alt="Train">
           </div>
         </div>
         <hr class="featurette-divider">
@@ -109,7 +108,7 @@
             <p class="lead">{{__('Все данные пользователей хранятся в наше базе данных, новым зарегистрированным пользователям необходимо будет предоставить свои паспортные данные, чтобы наши администраторы проверили и дали им досутп ко всем функциям сайта. Безопасность превыше всего!')}}</p>
           </div>
           <div class="col-md-5">
-            <img class="featurette-image img-fluid mx-auto rounded" src="/rzd1/storage/app/secure.jpg" width="300" height="300" alt="QR-code">
+            <img class="featurette-image img-fluid mx-auto rounded" src="/media/secure.jpg" width="300" height="300" alt="QR-code">
           </div>
         </div>
         <hr class="featurette-divider">
@@ -120,7 +119,7 @@
             <p class="lead">{{__('Наш сайт использует сервис "Яндекс" для парсинга расписания, это также удобно. Наши пользователи могут заказывать билеты на проезд, а также смотреть расписание электропоездов. В наших интересах, в скором времени подключить Яндекс Карты для отображения станций, это поможет найти более удобный путь прохода к станциям.')}}</p>
           </div>
           <div class="col-md-4 order-md-1">
-            <img class="featurette-image img-fluid mx-auto rounded" src="/rzd1/storage/app/yandex.png" width="300" height="300" alt="Yandex">
+            <img class="featurette-image img-fluid mx-auto rounded" src="/media/yandex.png" width="300" height="300" alt="Yandex">
           </div>
         </div>
         <hr>

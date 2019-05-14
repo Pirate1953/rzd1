@@ -20,7 +20,7 @@
 body{
   background-size: cover !important;
   background-repeat: no-repeat !important;
-  background: url("/rzd1/storage/app/railway.jpg");
+  background: url("/media/railway.jpg");
   background-attachment: fixed;
   background-position: center center;
 }

@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" href="/rzd1/storage/app/icon.ico">
+    <link rel="icon" href="/media/icon.ico">
 
     <title>{{__('Remove card')}}</title>
 
@@ -57,7 +57,7 @@
     <div class="container">
       <div class="py-5 text-center">
         <p></p>
-        <img class="d-block mx-auto mb-4 img-fluid rounded-circle" src="/rzd1/storage/app/rub.png" alt="" width="160" height="160">
+        <img class="d-block mx-auto mb-4 img-fluid rounded-circle" src="/media/rub.png" alt="" width="160" height="160">
         <h2>{{__('Remove card')}}</h2>
         <p class="lead" style="color: black !important;">{{__('Эта форма используется для подтвержения удаления карточки, в целях избежания случайного удаления из базы даных.')}}</p>
       </div>

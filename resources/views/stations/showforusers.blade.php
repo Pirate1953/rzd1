@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" href="/rzd1/storage/app/icon.ico">
+    <link rel="icon" href="/media/icon.ico">
 
     <title>{{__('Station Info')}}</title>
 
@@ -56,7 +56,7 @@
     <div class="container">
       <div class="py-5 text-center">
         <p></p>
-        <a href="{{route('redir')}}"><img class="d-block mx-auto mb-4 rounded" src="/rzd1/storage/app/logo.png" alt="" width="72" height="72"></a>
+        <a href="{{route('redir')}}"><img class="d-block mx-auto mb-4 rounded" src="/media/logo.png" alt="" width="72" height="72"></a>
 
         <h2>{{__('Station Info')}}</h2>
         <p class="lead" style="color: black !important;">{{__('Эта форма предназначена для просмотра информации о выбранной станции. Также здесь могут быть представлены интерсеные факты о некоторых станицях, которые вы возможно не знали.')}}</p>
@@ -64,7 +64,7 @@
 
       <div class="row">
 
-      <div class="col-md-4 order-md-2 mb-4">
+      <div class="col-md-6 order-md-1 mb-4">
         <h4 class="d-flex justify-content-between align-items-center mb-3">
           <span class="text-muted">{{__($station->name)}}</span>
         </h4>
@@ -78,9 +78,9 @@
         </div>
       </div>
 
-      <div class="col-md-8 order-md-1">
+      <div class="col-md-6 order-md-2">
       @foreach ($station->images as $image)
-      <img src="/rzd1/storage/app/{{$image->filename}}" class="img-fluid img-thumbnail" width="700" height="700" alt="">
+      <img src="/media/{{$image->filename}}" class="img-fluid img-thumbnail" width="700" height="700" alt="">
       @endforeach
 
   </div>

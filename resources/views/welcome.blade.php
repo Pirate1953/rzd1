@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="/rzd1/storage/app/icon.ico">
+    <link rel="icon" href="/media/icon.ico">
 
     <title>RZDBK</title>
 
@@ -41,9 +41,14 @@
 Исходя из этого, возникла идея создать специализированный сайт, на котором можно будет купить билет и на электричку. Для этого нужно всего лишь зарегистрироваться. С данным WEB – приложением больше не понадобиться стоять длинные очереди в кассах и в электронных кассах. Эта проблема заставляет людей выходить раньше из дома, а потом стоять на платформе и ожидать поезда, как холодной зимой, так и жарким летом.
 «RZDBK» – это приложение, предназначенное для формирования структуры и покупки билета на проезд в железнодорожном транспорте.
 ') }}</p>
-        <p class="lead">
+      <div class="row">
+        <div class="col-md-5 mb-2">
           <a href="{{ route('stations.aboutproject') }}" class="btn btn-lg btn-primary">{{ __('About project') }}</a>
-        </p>
+        </div>
+        <div class="col-md-7 mb-2">
+          <a href="{{ route('stations.mobileinfo') }}" class="btn btn-lg btn-success">{{ __('Мобильное приложение') }}</a>
+        </div>
+      </div>
       </main>
 
       <footer class="mastfoot mt-auto">

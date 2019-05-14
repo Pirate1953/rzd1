@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" href="/rzd1/storage/app/icon.ico">
+    <link rel="icon" href="/media/icon.ico">
 
     <title>{{__('Remove zone')}}</title>
 
@@ -54,7 +54,7 @@
     <div class="container">
       <div class="py-5 text-center">
         <p></p>
-        <img class="d-block mx-auto mb-4 img-fluid rounded-circle" src="/rzd1/storage/app/dashboard_ico/Zone_ico.png" alt="" width="160" height="160">
+        <img class="d-block mx-auto mb-4 img-fluid rounded-circle" src="/media/dashboard_ico/Zone_ico.png" alt="" width="160" height="160">
         <h2>{{__('Remove zone')}}</h2>
         <p class="lead" style="color: black !important;">{{__('Эта форма используется для подтвержения удаления зоны, в целях избежания случайного удаления из базы даных.')}}</p>
       </div>

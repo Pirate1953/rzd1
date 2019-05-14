@@ -37,6 +37,6 @@
 </div>
 
 @foreach ($station->images as $image)
-<img src="/rzd1/storage/app/{{$image->filename}}" class="img-fluid img-thumbnail" width="400" height="400" alt="">
+<img src="/media/{{$image->filename}}" class="img-fluid img-thumbnail" width="400" height="400" alt="">
 @endforeach
 @endsection

@@ -58,7 +58,8 @@ class StorePassportRequest extends FormRequest
           ],
 
           'datebirth' => 'required|date|before:issuedate',
-          'issuedate' => 'required|date'
+          'issuedate' => 'required|date',
+          'agree' => 'required'
         ];
     }
 }

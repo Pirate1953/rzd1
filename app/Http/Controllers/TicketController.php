@@ -32,7 +32,7 @@ class TicketController extends Controller
 
     public function historyticketusers(Ticket $ticket, Request $request)
     {
-      $this->authorize('create', $ticket);
+      $this->authorize('create', $ticket);//ПРОВЕРКА РОЛИ ПОЛЬЗОВАТЕЛЯ
       $tickets = Ticket::where('tickets.user_id', '=', $request->user()->id)->where('pay_status', '=', 5647)->orderBy('id', 'ASC');
       if ($request->wantsJson())
       {
@@ -54,6 +54,14 @@ class TicketController extends Controller
       {
         return view('tickets.historyticketusers')->withTickets($tickets->get());
       }
+    }
+
+    public function indexcardmobile(Ticket $ticket, Request $request)
+    {
+      $this->authorize('create', $ticket);//ПРОВЕРКА РОЛИ ПОЛЬЗОВАТЕЛЯ
+      $userid = $request->user()->id;
+      $cards = Usercard::where('user_id', '=', $userid)->orderBy('number')->get();
+      return $cards->toJson(JSON_UNESCAPED_UNICODE);
     }
 
     /**
@@ -174,7 +182,7 @@ class TicketController extends Controller
      */
     public function prepareviewmobile(Request $request, Ticket $ticket)
     {
-      $this->authorize('create', $ticket);
+      $this->authorize('create', $ticket);//ПРОВЕРКА РОЛИ ПОЛЬЗОВАТЕЛЯ
       $ticket = new Ticket();
       $price = 0;
       $preinf = $request->only(['departure_station', 'arrival_station', 'type_id']);
@@ -297,6 +305,29 @@ class TicketController extends Controller
         'tickets.*'
       ])
       ->toJson(JSON_UNESCAPED_UNICODE);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Ticket  $ticket
+     * @return \Illuminate\Http\Response
+     */
+    public function mobileticketqrcode(Ticket $ticket, Request $request)
+    {
+      $dep = Ticket::where('id', '=', $request->only(['id']))->value('departure_station');
+      $arr = Ticket::where('id', '=', $request->only(['id']))->value('arrival_station');
+      $t = Ticket::where('id', '=', $request->only(['id']))->value('type_id');
+      $id = Ticket::where('id', '=', $request->only(['id']))->value('id');
+      $price = Ticket::where('id', '=', $request->only(['id']))->value('price');
+      $user = Ticket::where('id', '=', $request->only(['id']))->value('user_id');
+      $start = Ticket::where('id', '=', $request->only(['id']))->value('start_date');
+      $end = Ticket::where('id', '=', $request->only(['id']))->value('end_date');
+      $stat = Ticket::where('id', '=', $request->only(['id']))->value('pay_status');
+      $str = "id=$id&dep=$dep&arr=$arr&type=$t&pr=$price&user=$user&start=$start&end=$end&st=$stat";
+      $qr = QrCode::format('png')->size(2000)->generate($str);
+      return response($qr)->header('Content-Type', 'image/png')
+      /**->header('Content-Disposition', 'attachment; filename="ticket.png"')*/;
     }
 
     /**

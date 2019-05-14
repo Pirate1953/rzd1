@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" href="/rzd1/storage/app/icon.ico">
+    <link rel="icon" href="/media/icon.ico">
 
     <title>{{__('Add card')}}</title>
 
@@ -57,7 +57,7 @@
     <div class="container">
       <div class="py-5 text-center">
         <p></p>
-        <a href="{{route('redir')}}"><img class="d-block mx-auto mb-4 rounded" src="/rzd1/storage/app/logo.png" alt="" width="72" height="72"></a>
+        <a href="{{route('redir')}}"><img class="d-block mx-auto mb-4 rounded" src="/media/logo.png" alt="" width="72" height="72"></a>
         <h2>{{__('Add card')}}</h2>
         <p class="lead" style="color: black !important;">{{__('Эта форма используется для привязки карточек к аккаунтам пользователей, если вы здесь, значит ваш аккаунт активирован. Если у вас уже есть привязанная карточка, вы можете посмотреть её ')}} {{Html::secureLink(route('cards.indexcard'),__('здесь.'))}}</p>
       </div>
@@ -90,9 +90,9 @@
                 )
             }} {{ Form::close() }}
             <hr>
-            <img src="/rzd1/storage/app/webmoney.png" width="160" height="50" alt="">
-            <img src="/rzd1/storage/app/qiwi.png" width="110" height="50" alt="">
-            <img src="/rzd1/storage/app/paypal.png" width="170" height="50" alt="">
+            <img src="/media/webmoney.png" width="160" height="50" alt="">
+            <img src="/media/qiwi.png" width="110" height="50" alt="">
+            <img src="/media/paypal.png" width="170" height="50" alt="">
         </div>
       </div>
 

@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" href="/rzd1/storage/app/icon.ico">
+    <link rel="icon" href="/media/icon.ico">
 
     <title>{{__('Наша команда')}}</title>
 
@@ -55,7 +55,7 @@
                           <div class="frontside">
                               <div class="card">
                                   <div class="card-body text-center">
-                                      <p><img class=" img-fluid" src="/rzd1/storage/app/idea.jpg" alt="card image"></p>
+                                      <p><img class=" img-fluid" src="/media/idea.jpg" alt="card image"></p>
                                       <h4 class="card-title">{{__('Шаг 1')}}</h4>
                                       <p class="card-text">{{__('Регистрация в системе.')}}</p>
                                   </div>
@@ -79,7 +79,7 @@
                           <div class="frontside">
                               <div class="card">
                                   <div class="card-body text-center">
-                                      <p><img class=" img-fluid" src="/rzd1/storage/app/user.png" alt="card image"></p>
+                                      <p><img class=" img-fluid" src="/media/user.png" alt="card image"></p>
                                       <h4 class="card-title">{{__('Шаг 2')}}</h4>
                                       <p class="card-text">{{__('Подтверждение своей личности.')}}</p>
                                   </div>
@@ -103,7 +103,7 @@
                           <div class="frontside">
                               <div class="card">
                                   <div class="card-body text-center">
-                                      <p><img class=" img-fluid" src="/rzd1/storage/app/work.jpg" alt="card image"></p>
+                                      <p><img class=" img-fluid" src="/media/work.jpg" alt="card image"></p>
                                       <h4 class="card-title">{{__('Шаг 3')}}</h4>
                                       <p class="card-text">{{__('Профит!!!')}}</p>
                                   </div>

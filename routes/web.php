@@ -32,6 +32,7 @@ Route::resource('types', 'TypeController');
 Route::get('types/{type}/remove', 'TypeController@remove')
           ->name('types.remove');
 
+//=================================СТАНЦИИ============================================
 Route::get('stations/{station}/showforusers', 'StationController@showforusers')
       ->name('stations.showforusers');
 Route::get('stations/{station}/showforanonym', 'StationController@showforanonym')
@@ -51,6 +52,8 @@ Route::get('stations/indexforanonym', 'StationController@indexforanonym')
           ->name('stations.indexforanonym');
 Route::get('stations/aboutproject', 'StationController@aboutproject')
           ->name('stations.aboutproject');
+Route::get('stations/mobileinfo', 'StationController@mobileinfo')
+          ->name('stations.mobileinfo');
 Route::get('stations/stages', 'StationController@stages')
           ->name('stations.stages');
 Route::get('stations/{station}/addimage', 'StationController@addimage')
@@ -61,6 +64,7 @@ Route::resource('stations', 'StationController');
 
 Route::resource('images', 'ImageController');
 
+//=================================ПОЛЬЗОВАТЕЛИ============================================
 Route::put('users/{user}/updateuser', 'StationController@updateuser')
           ->name('users.updateuser');
 Route::get('users/editprofile', 'StationController@editprofile')
@@ -93,6 +97,7 @@ Route::put('users/updatestat', 'StationController@updatestat')
           ->name('users.updatestat');
 Route::resource('users', 'StationController');
 
+//=================================КАРТОЧКИ============================================
 Route::get('cards/createcard', 'StationController@createcard')
           ->name('cards.createcard');
 Route::post('cards/storecard', 'StationController@storecard')
@@ -105,10 +110,12 @@ Route::delete('cards/{card}/destroycard', 'StationController@destroycard')
           ->name('cards.destroycard');
 Route::resource('cards', 'StationController');
 
+//=================================ТОКЕНЫ============================================
 Route::get('tokens/list', 'StationController@tokenlist')
           ->name('tokens.tokenlist');
 Route::resource('tokens', 'StationController');
 
+//=================================БИЛЕТЫ============================================
 Route::get('tickets/{ticket}/remove', 'TicketController@remove')
      ->name('tickets.remove');
 Route::get('tickets/sortforuserswithprice', 'TicketController@sortforuserswithprice')
@@ -125,6 +132,7 @@ Route::get('tickets/historyticketusers', 'TicketController@historyticketusers')
       ->name('tickets.historyticketusers');
 Route::resource('tickets', 'TicketController');
 
+//=================================РАСПИСАНИЕ============================================
 Route::get('rasps/raspmain', 'StationController@raspmain')
       ->name('rasps.raspmain');
 Route::get('rasps/raspget', 'StationController@raspget')

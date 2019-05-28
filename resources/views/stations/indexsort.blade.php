@@ -84,7 +84,7 @@
           <hr>
           <ul class="nav nav-pills flex-column">
             <li class="nav-item">
-              <a class="nav-link" href="#">{{__('Tokens')}}</a>
+              <a class="nav-link" href="{{route('stats.statindex')}}">{{__('Статистика')}}</a>
             </li>
           </ul>
         </nav>

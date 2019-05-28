@@ -144,6 +144,15 @@ Route::get('rasps/raspgetuser', 'StationController@raspgetuser')
       ->name('rasps.raspgetuser');
 Route::resource('raps', 'StationController');
 
+//=================================СТАТИСТИКА==========================================
+Route::get('stats/statindex', 'StationController@statindex')
+          ->name('stats.statindex');
+Route::get('stats/depsort', 'StationController@depsort')
+          ->name('stats.depsort');
+Route::get('stats/arrsort', 'StationController@arrsort')
+          ->name('stats.arrsort');
+Route::resource('stats', 'StationController');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

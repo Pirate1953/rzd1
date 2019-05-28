@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" href="/media/icon.ico">
 
-    <title>{{__('Types of tickets')}}</title>
+    <title>{{__('Статистика')}}</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
@@ -59,7 +59,7 @@
               <a class="nav-link" href="{{route('zones.index')}}">{{__('Zones')}}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="#">{{__('Types of tickets')}}<span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="{{route('types.index')}}">{{__('Types of tickets')}}</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{route('users.usersindex')}}">{{__('Users')}}</a>
@@ -69,34 +69,77 @@
           <hr>
           <ul class="nav nav-pills flex-column">
             <li class="nav-item">
-              <a class="nav-link" href="{{route('stats.statindex')}}">{{__('Статистика')}}</a>
+              <a class="nav-link active" href="#">{{__('Статистика')}}<span class="sr-only">(current)</span></a>
             </li>
           </ul>
         </nav>
 
-        <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
-          <h1>{{__('Types of tickets')}}</h1>
+        <main class="col-sm-10 offset-sm-3 col-md-10 offset-md-2 pt-3">
+          <h1>{{__('Статистика')}}</h1>
           <section class="row text-center placeholders">
-            <div class="col-6 col-sm-3 placeholder">
-              <a href="{{route('stations.index')}}"><img src="/media/dashboard_ico/St_ico.png" width="200" height="200" class="img-fluid rounded-circle" alt="Stations"></a>
-              <h4>{{__('Stations')}}</h4>
-              <div class="text-muted">{{__('Работа со станциями')}}</div>
+            <div class="col-md-3 text-center">
             </div>
-            <div class="col-6 col-sm-3 placeholder">
-              <a href="{{route('zones.index')}}"><img src="/media/dashboard_ico/Zone_ico.png" width="200" height="200" class="img-fluid rounded-circle" alt="Zones"></a>
-              <h4>{{__('Zones')}}</h4>
-              <span class="text-muted">{{__('Работа с зонами')}}</span>
+            <div class="col-md-6 text-center">
+              <img src="/media/userico.png" width="140" height="140" class="img-fluid" alt="Users">
+              <h2>{{__('Всего пользователей:')}}</h2>
+              <p style="font-size: 20px;">{{__($user1)}}</p>
             </div>
-            <div class="col-6 col-sm-3 placeholder">
-              <a href="{{route('types.index')}}"><img src="/media/dashboard_ico/Type_ico.png" width="200" height="200" class="img-fluid rounded-circle" alt="Types"></a>
-              <h4>{{__('Types of tickets')}}</h4>
-              <span class="text-muted">{{__('Работа с типами билетов')}}</span>
+            <div class="col-md-3 text-center">
             </div>
-            <div class="col-6 col-sm-3 placeholder">
-              <a href="{{route('users.usersindex')}}"><img src="/media/dashboard_ico/User_ico.png" width="200" height="200" class="img-fluid rounded-circle" alt="Users"></a>
-              <h4>{{__('Users')}}</h4>
-              <span class="text-muted">{{__('Работа с аккаунтами')}}</span>
+            <div class="col-md-6 text-center">
+              <img src="/media/Tickets-icon.png" width="140" height="140" class="img-fluid" alt="Users">
+              <h2>{{__('Куплено билетов:')}}</h2>
+              <p style="font-size: 20px;">{{__($ticket1)}}{{__(' шт.')}}</p>
             </div>
+            <div class="col-md-6 text-center">
+              <img src="/media/coins.png" width="140" height="140" class="img-fluid rounded-circle" alt="Users">
+              <h2>{{__('Прибыль:')}}</h2>
+              <p style="font-size: 20px;">{{__($rubs)}}{{__(' руб.')}}</p>
+            </div>
+            <div class="col-md-3 text-center">
+            </div>
+            <div class="col-md-6 text-center">
+              <img src="/media/phone.png" width="140" height="140" class="img-fluid" alt="Users">
+              <h2>{{__('Вход через API:')}}</h2>
+              <p style="font-size: 20px;">{{__($token1)}}{{__(' токенов')}}</p>
+            </div>
+            <div class="col-md-3 text-center">
+            </div>
+            <div class="col-md-12 text-center">
+              <h1>{{__('Статистика по билетам')}}</h1>
+            </div>
+            {{
+                Form::open(['class' => 'col-md-6',
+                    'method' => 'GET',
+                    'route'  => 'stats.depsort'
+                ])
+            }}
+              {{ Form::label('station_izone_id', __('От куда:')) }}
+              {{ Form::select('station_id', $stations, null, ['class' => 'custom-select d-block w-100'])}}
+            {{
+                Form::submit(
+                    __('Получить сведения'),
+                    [
+                        'class' => 'btn btn-primary mt-2',
+                    ]
+                )
+            }} {{ Form::close() }}
+            {{
+                Form::open(['class' => 'col-md-6',
+                    'method' => 'GET',
+                    'route'  => 'stats.arrsort'
+                ])
+            }}
+              {{ Form::label('station_id', __('До куда:')) }}
+              {{ Form::select('station_id', $stations, null, ['class' => 'custom-select d-block w-100'])}}
+              {{
+                  Form::submit(
+                      __('Получить сведения'),
+                      [
+                          'class' => 'btn btn-primary mt-2',
+                      ]
+                  )
+              }} {{ Form::close() }}
           </section>
           @if (Session::has('message'))
               {{-- Всплывающие сообщения. --}}
@@ -111,43 +154,6 @@
                   {{ Html::ul($errors->all()) }}
               </div>
           @endif
-          <p></p>
-          {{
-              Html::secureLink(
-                  route('types.create'),
-                  __('Add type')
-              )
-          }}
-
-          <h2>{{__('Таблица типов')}}</h2>
-          <div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>{{__('Name')}}</th>
-                  <th>{{__('Number')}}</th>
-                  <th>{{__('Edit type')}}</th>
-                  <th>{{__('Remove type')}}</th>
-                </tr>
-              </thead>
-              <tbody>
-                @foreach ($types as $type)
-                <tr>
-                  <td>{{ $type->name }}</td>
-                  <td>{{ $type->number }}</td>
-                  <td>{{ Html::secureLink(
-                      route('types.edit', $type->id),
-                      __('Edit type')
-                  ) }}</td>
-                  <td>{{ Html::secureLink(
-                      route('types.remove', $type->id),
-                      __('Remove type')
-                  ) }}</td>
-                </tr>
-                @endforeach
-              </tbody>
-            </table>
-          </div>
           <hr>
           <div class="container text-center">
             <p>&copy; Колганов Сергей, 2019</p>

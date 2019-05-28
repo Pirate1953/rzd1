@@ -69,14 +69,12 @@
           </div>
           <div class="col-md-3 text-center">
           </div>
-          <div class="col-md-3 text-center">
+          <div class="col-md-6 text-center">
             <img src="/media/dashboard_ico/User_ico.png" width="140" height="140" class="img-fluid rounded-circle" alt="Users">
             <h2>{{__('Второй шаг')}}</h2>
-            <p>{{__('Пройти авторизацию (вам нужно быть зарегистрированнымв в системе)')}}</p>
+            <p>{{__('Пройти авторизацию')}}</p>
           </div>
           <div class="col-md-6 text-center">
-          </div>
-          <div class="col-md-3 text-center">
             <img src="/media/yandex_api.png" width="140" height="140" class="img-fluid rounded-circle" alt="Users">
             <h2>{{__('Третий шаг')}}</h2>
             <p>{{__('Посмотреть актуальное расписание рейсов')}}</p>

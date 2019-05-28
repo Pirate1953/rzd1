@@ -16,6 +16,7 @@ use App\Role;
 use App\Gender;
 use App\Userstat;
 use App\Image;
+use App\Ticket;
 use Illuminate\Http\Request;
 use App\Http\Requests\StationRequest;
 use App\Http\Requests\StorePassportRequest;
@@ -470,11 +471,53 @@ class StationController extends Controller
       return redirect(route('stations.index'));
       ////////var_dump($request->file('filename'));
     }
-//======================================TOKENS==========================================
-    public function tokenlist()
+//======================================STATS==========================================
+    public function statindex(Request $request, Station $station)
     {
+      $user1 = 0; $ticket1 = 0; $token1 = 0;
+      $this->authorize('view', $station);
+      $users = User::all();
+      $tickets = Ticket::all();
+      $rubs = Ticket::where('pay_status', '=', '5647')->sum('price');
       $tokens = DB::table('oauth_access_tokens')->get();
-      var_dump($tokens);
+      $stations = Station::orderBy('number')->pluck('name', 'id');
+      foreach ($users as $user) {
+        $user1++;
+      }
+      foreach ($tickets as $ticket) {
+        $ticket1++;
+      }
+      foreach ($tokens as $token) {
+        $token1++;
+      }
+      //var_dump($token1);
+      return view('stats.index', compact('user1', 'ticket1', 'rubs', 'token1', 'stations'));
+    }
+
+    public function depsort(Request $request, Station $station)
+    {
+      $ticket1 = 0;
+      $this->authorize('view', $station);
+      $depst = $request->only(['station_id']);
+      $tickets = Ticket::where('pay_status', '=', '5647')->where('departure_station', '=', $depst)->get();
+      foreach ($tickets as $ticket) {
+        $ticket1++;
+      }
+      //var_dump($tickets);
+      return view('stats.depsort', compact('tickets','ticket1'));
+    }
+
+    public function arrsort(Request $request, Station $station)
+    {
+      $ticket1 = 0;
+      $this->authorize('view', $station);
+      $arrst = $request->only(['station_id']);
+      $tickets = Ticket::where('pay_status', '=', '5647')->where('arrival_station', '=', $arrst)->get();
+      foreach ($tickets as $ticket) {
+        $ticket1++;
+      }
+      //var_dump($tickets);
+      return view('stats.arrsort', compact('tickets','ticket1'));
     }
 
 //============================RASP======================================================
@@ -499,7 +542,7 @@ class StationController extends Controller
         $attributes = $request->only(['departure_station', 'arrival_station', 'date']);
         $response = $client->request('GET', 'https://api.rasp.yandex.net/v3.0/search/', [
           'query' => [
-            'apikey'          => '',
+            'apikey'          => 'af880362-8d18-4e43-b37d-53a718cc6b3e',
             'from'            => $attributes['departure_station'],
             'to'              => $attributes['arrival_station'],
             'date'            => $attributes['date'],
@@ -530,7 +573,7 @@ class StationController extends Controller
         $attributes = $request->only(['departure_station', 'arrival_station', 'date']);
         $response = $client->request('GET', 'https://api.rasp.yandex.net/v3.0/search/', [
           'query' => [
-            'apikey'          => '',
+            'apikey'          => 'af880362-8d18-4e43-b37d-53a718cc6b3e',
             'from'            => $attributes['departure_station'],
             'to'              => $attributes['arrival_station'],
             'date'            => $attributes['date'],

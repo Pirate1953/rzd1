@@ -215,8 +215,8 @@
         @for ($key = 0; $key < $total; $key++)
         <tr>
           <td>{{ $times['segments'][$key]['from']['title'] }}{{__(' - ')}}{{$times['segments'][$key]['to']['title'] }}</td>
-          <td>{{ substr($times['segments'][$key]['departure'], 11, 8) }}</td>
-          <td>{{ substr($times['segments'][$key]['arrival'], 11, 8) }}</td>
+          <td>{{ substr($times['segments'][$key]['departure'], 11, 5) }}</td>
+          <td>{{ substr($times['segments'][$key]['arrival'], 11, 5) }}</td>
         </tr>
         @endfor
       </tbody>

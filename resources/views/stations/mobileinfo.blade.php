@@ -54,7 +54,7 @@
         <div class="container">
           <h1 class="display-3">{{__('RZDBK Mobile')}}</h1>
           <p>{{__('У нас есть мобильное приложение, которое является портативным иснструментом для осуществения заказа проездных документов. Также через мобильное приложение доступна функция просмотра расписания.')}}</p>
-          <p><a class="btn btn-success btn-lg" href="#" role="button">{{__('Скачать')}}</a></p>
+          <p><a class="btn btn-success btn-lg" href="{{route('stations.donwloadfile')}}" role="button">{{__('Скачать')}}</a></p>
         </div>
       </div>
 

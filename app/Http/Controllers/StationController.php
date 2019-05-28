@@ -471,6 +471,12 @@ class StationController extends Controller
       return redirect(route('stations.index'));
       ////////var_dump($request->file('filename'));
     }
+//==========================DOWNLOADS==============================================
+    public function donwloadfile(Request $request)
+    {
+      $path = public_path('media/RZDBK_m.apk');
+      return response()->download($path);
+    }
 //======================================STATS==========================================
     public function statindex(Request $request, Station $station)
     {
@@ -542,7 +548,7 @@ class StationController extends Controller
         $attributes = $request->only(['departure_station', 'arrival_station', 'date']);
         $response = $client->request('GET', 'https://api.rasp.yandex.net/v3.0/search/', [
           'query' => [
-            'apikey'          => 'af880362-8d18-4e43-b37d-53a718cc6b3e',
+            'apikey'          => '',
             'from'            => $attributes['departure_station'],
             'to'              => $attributes['arrival_station'],
             'date'            => $attributes['date'],
@@ -573,7 +579,7 @@ class StationController extends Controller
         $attributes = $request->only(['departure_station', 'arrival_station', 'date']);
         $response = $client->request('GET', 'https://api.rasp.yandex.net/v3.0/search/', [
           'query' => [
-            'apikey'          => 'af880362-8d18-4e43-b37d-53a718cc6b3e',
+            'apikey'          => '',
             'from'            => $attributes['departure_station'],
             'to'              => $attributes['arrival_station'],
             'date'            => $attributes['date'],

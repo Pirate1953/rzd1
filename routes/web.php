@@ -54,6 +54,8 @@ Route::get('stations/aboutproject', 'StationController@aboutproject')
           ->name('stations.aboutproject');
 Route::get('stations/mobileinfo', 'StationController@mobileinfo')
           ->name('stations.mobileinfo');
+Route::get('stations/donwloadfile', 'StationController@donwloadfile')
+          ->name('stations.donwloadfile');
 Route::get('stations/stages', 'StationController@stages')
           ->name('stations.stages');
 Route::get('stations/{station}/addimage', 'StationController@addimage')

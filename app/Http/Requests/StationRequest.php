@@ -40,6 +40,7 @@ class StationRequest extends FormRequest
             'max:255',
             'min:1',
             'required',
+            'regex:/^[а-я ё.-]+$/iu',
           ],
 
           'description' => [

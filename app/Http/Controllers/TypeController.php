@@ -82,7 +82,7 @@ class TypeController extends Controller
      * @param  \App\Type  $type
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Type $type)
+    public function update(TypeRequest $request, Type $type)
     {
       $attributes = $request->only(['number', 'name']);
       $type->update($attributes);

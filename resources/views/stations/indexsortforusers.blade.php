@@ -112,7 +112,7 @@
               </div>
           @endif
 
-          <h2>{{__('Список танций')}}</h2>
+          <h2>{{__('Список станций')}}</h2>
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>
